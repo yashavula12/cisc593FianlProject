@@ -71,6 +71,7 @@ public class EmployeeControllerTest {
 		given(this.employeeService.getEmployee("Yash1")).willReturn(employee);
 		
 		given(this.dailyHoursService.saveDailyHours(dailyHours)).willReturn(dailyHours);
+		given(this.dailyHoursService.findByDateOfSubmission("06/12/2021")).willReturn(Arrays.asList(dailyHours));
 
 	}
 
@@ -148,6 +149,11 @@ public class EmployeeControllerTest {
 	@Test
 	public void testGetEmployee() throws Exception {
 		mockMvc.perform(get("/getEmployee/Yash1")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void testGetByDateOfSubmission() throws Exception {
+		mockMvc.perform(get("/dailyHours/getHoursBydateOdSunmission")).andExpect(status().isOk());
 	}
 
 	public static String mapToJson(Object object) throws JsonProcessingException {
