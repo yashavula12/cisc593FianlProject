@@ -96,7 +96,7 @@ public class EmployeeControllerTest {
 	}
 	
 	@Test
-	public void testSaveEmployeeBindingResult() throws Exception {
+	public void testSaveEmployeeBindingResult() throws Exception  {
 		
 		when(bindingResult.hasErrors()).thenReturn(false);
 
