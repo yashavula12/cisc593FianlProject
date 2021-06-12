@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS TBL_EMPLOYEES;
+
+CREATE TABLE TBL_EMPLOYEES (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  first_name VARCHAR(250) NOT NULL,
+  last_name VARCHAR(250) NOT NULL,
+  email VARCHAR(250) DEFAULT NULL,
+  role VARCHAR(250) NOT NULL,
+  employee_id VARCHAR(250) NOT NULL UNIQUE
+);
+
+DROP TABLE IF EXISTS TBL_DAILY_HOURS;
+
+CREATE TABLE TBL_DAILY_HOURS (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  date_of_submission TIMESTAMP NOT NULL,
+  start_time TIMESTAMP NOT NULL,
+  end_time TIMESTAMP NOT NULL,
+  total_minutes INT ,
+  break_minutes INT ,
+  payable_minutes INT,
+  employee_id VARCHAR(250)
+);
+
+create sequence hibernate_sequence;
+
+
+
